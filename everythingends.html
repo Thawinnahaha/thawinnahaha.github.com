@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" strict-origin-when-cross-origin />
+  <title>Everything Ends</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-C4u4hlUsS4MZXPRFWa6aU2QGTNX_ObKzNWHdW_E3RDzHhwIbQOAR1VG8W8Y5wP7uIUPbgY8p");
+      color: #333;
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .homebutton {
+      position: fixed;
+      top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: rgba(0, 0, 0, 0.39);
+      border: none;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: #f8fafc;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+    .homebutton:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      width: min(90vw, 500px);
+      border-radius: 1.5rem;
+      backdrop-filter: blur(16px);
+      background: rgba(26, 26, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .card.topleft {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      transform : translate(0,0)
+    }
+    .card.topright {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      transform : translate(0,0)
+    }
+    .card.bottomright {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      transform : translate(0,0)
+    }
+
+    h1 {
+      color: rgb(255, 255, 255);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Everything Ends</h1>
+    <p>A song that even reached the metal charts #1 position</p>
+  </div>
+  <div class="card bottomright">
+    <iframe 
+    width="100%" 
+    height="352rem" 
+    src="https://www.youtube.com/embed/gEl5Q3SXJwc" 
+    title="Architects - &quot;Everything Ends&quot;"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+  </div>
+  <div class="card topleft">
+    <h1>Songstructure</h1>
+    <p>“Everything Ends” by Architects is built around a tense, ascending structure that moves from tightly wound, 
+      rhythmic verses into explosive, emotionally charged choruses marked by sharp riffs and urgent vocals.
+    </p>
+  </div>
+  <div class="card topright">
+    <h1>Information</h1>
+    <p>The track was written during a period of mounting personal and internal struggles within the band, 
+      with themes that later grew even more poignant in light of guitarist Tom Searle's battle with cancer and the group's confrontation with grief and impermanence.</p>
+         <p>R.I.P Tom Searle</p>
+  </div>
+  <button class="homebutton" onclick="window.location.href='Startseite241125.html'">Home</button>
+  <div style="position:fixed; left:1rem; bottom:1rem; z-index:4; border-radius:0.5rem; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.35);">
+    <iframe data-testid="embed-iframe" 
+    style="border-radius:12px" 
+    src="https://open.spotify.com/embed/track/3yC1soClolbb2jFH7XIPqd?utm_source=generator&theme=0" 
+    width="100%"
+    height="352" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy"></iframe>
+  </div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Sky, the Earth & All Between- Startseite</title>
+
+  <style>
+   
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --surface: #1a1a1a;
+      --surface-light: #2a2a2a;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+    }
+
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background-image: url("https://static.tumblr.com/af6a3342c58d74ecbd56d3e735fa48ff/f7bq9dl/IFVo737gk/tumblr_static_tumblr_static_738dxb5mvskcs08coog8ks0gg_focused_v3.jpg");
+      color: var(--text-primary);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.5;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    
+    .card {
+      position: relative;
+      z-index: 2;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      width: min(90vw, 500px);
+      border-radius: 1.5rem;
+      backdrop-filter: blur(16px);
+      background: rgba(26, 26, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    .hero {
+      width: clamp(100px, 20vw, 140px);
+      height: clamp(100px, 20vw, 140px);
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .hero:hover {
+      transform: scale(1.05);
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 600;
+    }
+
+    .summary {
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      line-height: 1.6;
+      max-width: 90%;
+    }
+
+   
+    .songs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .songs a {
+      flex: 1;
+      min-width: 200px;
+      max-width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: 0.2s ease;
+    }
+
+    .songs a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .songs a:active {
+      transform: translateY(0);
+    }
+
+    .songs svg {
+      width: 16px;
+      height: 16px;
+    }
+    .secret {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: #f8fafc00;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .secret:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+
+    
+    @media (max-width: 768px) {
+      .card {
+        padding: 1.5rem;
+        width: 90vw;
+      }
+
+      .songs a {
+        min-width: 100px;
+        padding: 0.6rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .songs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .songs a {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="c"></canvas>
+  <button class="secret"onclick="window.location.href='https://www.youtube.com/@wearearchitects'">secret</button>
+
+  <div class="card" id="MainMusicCard">
+    <div class="hero">
+      <img id="AlbumPic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-C4u4hlUsS4MZXPRFWa6aU2QGTNX_ObKzNWHdW_E3RDzHhwIbQOAR1VG8W8Y5wP7uIUPbgY8p" alt="Profile Photo" />
+    </div>
+
+    <h1>The Sky, the Earth & All Between</h1>
+
+    <p class="summary">
+      The newest Album of the Australian Metalcore Band: Architects
+    </p>
+
+    <div class="songs">
+      <a href="braindead.html">
+        Braindead
+      </a>
+
+      <a href="elegy.html">
+        Elegy
+      </a>
+      
+      <a href="blackhole.html">
+        Blackhole
+      </a>
+
+      <a href="everythingends.html">
+        Everything Ends
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
